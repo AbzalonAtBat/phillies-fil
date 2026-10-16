@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-16T20:23:25.439217+00:00",
+ "generated": "2026-10-16T20:26:30.071231+00:00",
  "count": 84,
  "sources": [
   {
@@ -7,7 +7,7 @@
    "site": "https://philliesnation.com/",
    "n": 0,
    "ok": false,
-   "note": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out"
+   "note": "RemoteDisconnected: Remote end closed connection without response"
   },
   {
    "source": "The Good Phight",
@@ -82,7 +82,7 @@
   {
    "source": "Presse — Phillies",
    "site": "https://www.bing.com/news",
-   "n": 14,
+   "n": 11,
    "ok": true,
    "note": "Bing News RSS"
   },
@@ -96,21 +96,12 @@
   {
    "source": "Presse — effectif",
    "site": "https://www.bing.com/news",
-   "n": 3,
+   "n": 5,
    "ok": true,
    "note": "Bing News RSS"
   }
  ],
  "items": [
-  {
-   "title": "theScore Bet Promo Code BROAD: Get $1,000 Bonus for NCAAF, NFL Week 16 (Oct. 16)",
-   "url": "https://www.crossingbroad.com/news/sports-gambling/thescore-bet-promo-code-broad-get-1000-bonus-for-ncaaf-nfl-week-16-oct-16/",
-   "when": "2026-10-16T20:23:18+00:00",
-   "summary": "Set up your new profile using theScore Bet promo code BROAD and secure a $1,000 bet reset offer for October 16, 2026. New users can wager up to $1,000 on college football games, the MLB Postseason and more with this offer knowing…",
-   "publisher": "Crossing Broad",
-   "chip": "Crossing Broad",
-   "site": "https://www.crossingbroad.com/"
-  },
   {
    "title": "[Phillies Tailgate] “[Bryan Rincon] underwent another hamstring surgery — his second in three years — soon after the season. The injuries, described by the Phillies as minor, have affected both hamstrings. Rincon wasn’t moving as well in the later months of the minor-league season.” -@MattGelb",
    "url": "https://www.reddit.com/r/phillies/comments/1x7p306/phillies_tailgate_bryan_rincon_underwent_another/",
@@ -146,6 +137,15 @@
    "publisher": "Crossing Broad",
    "chip": "Crossing Broad",
    "site": "https://www.crossingbroad.com/"
+  },
+  {
+   "title": "The Brewers overcame their playoff defeats. Can the Phillies do it, too?",
+   "url": "https://www.thegoodphight.com/phillies-analysis/88660/the-brewers-overcame-their-playoff-defeats-can-the-phillies-do-it-too",
+   "when": "2026-10-16T13:00:00-04:00",
+   "summary": "Trea Turner will open the season at shortstop. Don Mattingly is returning as manager. Alec Bohm could be back at third base, Luis Arraez could also return. The majority of a bullpen nobody liked is set to return, no starting…",
+   "publisher": "The Good Phight",
+   "chip": "The Good Phight",
+   "site": "https://www.thegoodphight.com/"
   },
   {
    "title": "Wawa is Now the Official Hoagie and Breakfast Sandwich of the Philadelphia 76ers",
@@ -200,6 +200,15 @@
    "publisher": "r/phillies",
    "chip": "r/phillies",
    "site": "https://www.reddit.com/r/phillies/"
+  },
+  {
+   "title": "2026 Phillies Report Cards: Luis Arraez",
+   "url": "https://www.thegoodphight.com/phillies-analysis/88421/2026-phillies-report-cards-luis-arraez",
+   "when": "2026-10-16T11:00:00-04:00",
+   "summary": "A few weeks back, I was on vacation in Tokyo. On a bright, sunny day, I wandered through a garden on the terrace of a city government building, gazing out at the city below. As I left the garden, I passed by the office for…",
+   "publisher": "The Good Phight",
+   "chip": "The Good Phight",
+   "site": "https://www.thegoodphight.com/"
   },
   {
    "title": "Offseason Outlook: Atlanta Braves",
@@ -310,15 +319,6 @@
    "site": "https://www.thegoodphight.com/"
   },
   {
-   "title": "2 Phillies Legends Reportedly Turned Down Manager’s Job",
-   "url": "https://www.si.com/mlb/phillies/onsi/2-phillies-legends-reportedly-turned-down-manager-s-job",
-   "when": "2026-10-16T11:00:00+00:00",
-   "summary": "",
-   "publisher": "Sports Illustrated",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "Phillies Postseason Discussion Thread - Friday, October 16",
    "url": "https://www.reddit.com/r/phillies/comments/1x7b6t4/phillies_postseason_discussion_thread_friday/",
    "when": "2026-10-16T09:00:06+00:00",
@@ -328,20 +328,20 @@
    "site": "https://www.reddit.com/r/phillies/"
   },
   {
-   "title": "Phillies Had Interest in Hiring 2 Former Players Amid Don Mattingly Decision",
-   "url": "https://heavy.com/sports/mlb/philadelphia-phillies/phillies-had-interest-in-hiring-2-former-players-amid-don-mattingly-decision/",
-   "when": "2026-10-16T08:12:00+00:00",
-   "summary": "",
-   "publisher": "Heavy",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "Dave Dombrowski Appears Ready To Have Aidan Miller On Phillies By Opening Day",
    "url": "https://www.msn.com/en-us/news/other/dave-dombrowski-appears-ready-to-have-aidan-miller-on-phillies-by-opening-day/ar-AA2enXLI",
    "when": "2026-10-16T08:00:28+00:00",
    "summary": "",
    "publisher": "Sports Illustrated on MSN",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Phillies bring back Mayza on 1-year deal",
+   "url": "https://www.mlb.com/phillies/news/tim-mayza-re-signed-by-phillies",
+   "when": "2026-10-16T07:27:00+00:00",
+   "summary": "",
+   "publisher": "Major League Baseball",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -373,15 +373,6 @@
    "site": "https://www.bing.com/news"
   },
   {
-   "title": "Don Mattingly: 2026 Phillies ‘really wasn’t my team’",
-   "url": "https://larrybrownsports.com/baseball/don-mattingly-2026-phillies-really-wasnt-my-team/774533",
-   "when": "2026-10-16T04:24:00+00:00",
-   "summary": "",
-   "publisher": "Larry Brown Sports",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "The Brewers have my back",
    "url": "https://www.reddit.com/r/phillies/comments/1x75ram/the_brewers_have_my_back/",
    "when": "2026-10-16T03:32:42+00:00",
@@ -391,6 +382,15 @@
    "site": "https://www.reddit.com/r/phillies/"
   },
   {
+   "title": "Dodgers Consiglieri, Former Stars, Spurn Phillies For Los Angeles",
+   "url": "https://www.forbes.com/sites/peterchawaga/2026/10/16/dodgers-consiglieri-former-stars-spurn-phillies-for-los-angeles/",
+   "when": "2026-10-16T03:30:00+00:00",
+   "summary": "",
+   "publisher": "Forbes",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Ryan Howard and Shane Victorino will manage the Indianapolis Clowns and Loco Beach Coconuts for 2 banana ball games at CBP August 27-28 2027",
    "url": "https://www.reddit.com/r/phillies/comments/1x742ry/ryan_howard_and_shane_victorino_will_manage_the/",
    "when": "2026-10-16T02:03:59+00:00",
@@ -398,15 +398,6 @@
    "publisher": "r/phillies",
    "chip": "r/phillies",
    "site": "https://www.reddit.com/r/phillies/"
-  },
-  {
-   "title": "Ex-Phillies star Raul Ibanez at least thought about leaving Dodgers to replace Don Mattingly",
-   "url": "https://clutchpoints.com/mlb/philadelphia-phillies/phillies-news-raul-ibanez-thought-leaving-dodgers-replace-don-mattingly",
-   "when": "2026-10-15T23:42:00+00:00",
-   "summary": "",
-   "publisher": "ClutchPoints",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
   },
   {
    "title": "PrizePicks Promo Code BROAD: Play $5, Win $150 in Lineups for Broncos vs. Seahawks",
@@ -479,6 +470,15 @@
    "publisher": "The Good Phight",
    "chip": "The Good Phight",
    "site": "https://www.thegoodphight.com/"
+  },
+  {
+   "title": "Novig Promo Code RAD50: Claim $50 Bonus for Thursday Night Football (Oct. 15)",
+   "url": "https://www.crossingbroad.com/news/sports-gambling/novig-promo-code-rad50-thursday-night-football-oct-15/",
+   "when": "2026-10-15T18:32:48+00:00",
+   "summary": "The Novig promo code RAD50 unlocks a high-value welcome offer for the TNF matchup between the Seahawks and Broncos. New customers who sign up with this welcome offer and deposit $10 get $50 in trade credits, which become…",
+   "publisher": "Crossing Broad",
+   "chip": "Crossing Broad",
+   "site": "https://www.crossingbroad.com/"
   },
   {
    "title": "Trea Turner will be the Phillies' shortstop in 2027 – until he's not",
@@ -598,9 +598,18 @@
    "site": "https://thatballsouttahere.com/"
   },
   {
-   "title": "Phillies Smartly Add Former New York Mets Manager to Staff",
-   "url": "https://heavy.com/sports/mlb/philadelphia-phillies/phillies-add-new-york-mets-manager-mendoza-staff/",
-   "when": "2026-10-15T04:49:00+00:00",
+   "title": "Phillies reunion with polarizing infielder 'can't be ruled out' per MLB insider",
+   "url": "https://www.sportingnews.com/us/mlb/philadelphia-phillies/news/phillies-reunion-polarizing-infielder-cant-be-ruled-out-mlb/71131591836f869be35f1f73",
+   "when": "2026-10-15T09:51:00+00:00",
+   "summary": "",
+   "publisher": "Sporting News",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Philadelphia Phillies Sign 34-Year-Old After Early Playoff Exit",
+   "url": "https://heavy.com/sports/mlb/philadelphia-phillies/sign-24-year-old-early-playoff-exit/",
+   "when": "2026-10-15T06:04:00+00:00",
    "summary": "",
    "publisher": "Heavy",
    "chip": "Presse",
@@ -623,15 +632,6 @@
    "publisher": "That Balls Outta Here",
    "chip": "That Balls Outta Here",
    "site": "https://thatballsouttahere.com/"
-  },
-  {
-   "title": "Phillies not bringing back Kevin Long, Bobby Dickerson to staff",
-   "url": "https://www.thegoodphight.com/philadelphia-phillies-news/88616/phillies-not-bringing-back-kevin-long-bobby-dickerson-to-staff",
-   "when": "2026-10-14T19:08:38-04:00",
-   "summary": "This is certainly something. Both of these coaches are good coaches. There have been significant upgrades in their lineup and infield while both of these guys were employed, especially when considering the entirety of their…",
-   "publisher": "The Good Phight",
-   "chip": "The Good Phight",
-   "site": "https://www.thegoodphight.com/"
   },
   {
    "title": "Rafael Marchán looks to rebuild value with Tiburones de La Guaira in Venezuelan Winter League",
@@ -670,15 +670,6 @@
    "site": "https://thelibertyline.com/category/phillies/"
   },
   {
-   "title": "2026 Phillies Report Cards: Zach Pop",
-   "url": "https://www.thegoodphight.com/phillies-analysis/88541/2026-phillies-report-cards-zach-pop",
-   "when": "2026-10-14T11:00:00-04:00",
-   "summary": "One of the Phillies’ main goals over last offseason was to build better pitching depth, particularly in their bullpen. Besides their major acquisitions of Brad Keller and Jonathan Bowlan, the team acquired numerous depth options…",
-   "publisher": "The Good Phight",
-   "chip": "The Good Phight",
-   "site": "https://www.thegoodphight.com/"
-  },
-  {
    "title": "Phillies stay or go: OF Brandon Marsh",
    "url": "https://www.phillyvoice.com/phillies-stay-go-brandon-marsh-outfield-free-agent-news-rumors-latest-contract-analysis/?utm_source=phillies&utm_medium=rss&utm_campaign=pv-site",
    "when": "2026-10-14T14:23:07+00:00",
@@ -715,11 +706,11 @@
    "site": "https://thatballsouttahere.com/"
   },
   {
-   "title": "Philadelphia Phillies to bring back manager Don Mattingly with two-year deal",
-   "url": "https://www.msn.com/en-us/news/other/philadelphia-phillies-set-to-bring-back-manager-don-mattingly-in-2027/ar-AA2eeQ6E",
-   "when": "2026-10-14T08:33:11+00:00",
+   "title": "Philadelphia Phillies are keeping Don Mattingly as manager on a 2-year deal",
+   "url": "https://www.msn.com/en-us/news/other/philadelphia-phillies-are-keeping-don-mattingly-as-manager-on-a-2-year-deal/ar-AA2ef0yC",
+   "when": "2026-10-14T08:27:00+00:00",
    "summary": "",
-   "publisher": "UPI on MSN",
+   "publisher": "NBC Sports on MSN",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -787,11 +778,20 @@
    "site": "https://www.bing.com/news"
   },
   {
-   "title": "Philadelphia Phillies",
-   "url": "https://lastwordonsports.com/baseball/category/phillies/",
-   "when": "2026-10-12T17:01:00+00:00",
+   "title": "Five more questions the Phillies must answer this offseason",
+   "url": "https://www.nytimes.com/athletic/7684810/2026/10/13/phillies-offseason-questions/",
+   "when": "2026-10-13T03:01:00+00:00",
    "summary": "",
-   "publisher": "Last Word On Sports",
+   "publisher": "The New York Times",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Phillies’ 7-Year Veteran Sends Contract Message With $25 Million Cut From New Team Looming",
+   "url": "https://www.forbes.com/sites/peterchawaga/2026/10/12/phillies-7-year-veteran-sends-contract-message-with-25-million-cut-from-new-team-looming/",
+   "when": "2026-10-12T03:30:00+00:00",
+   "summary": "",
+   "publisher": "Forbes",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -860,17 +860,16 @@
   }
  ],
  "publishers": {
-  "Heavy": 3,
+  "Forbes": 3,
+  "Sporting News": 3,
   "Sports Illustrated on MSN": 2,
   "Yahoo Sports": 2,
-  "Sporting News": 2,
-  "Sports Illustrated": 1,
+  "Heavy": 2,
+  "The New York Times": 2,
   "NBC Sports": 1,
-  "ClutchPoints": 1,
-  "Larry Brown Sports": 1,
+  "Major League Baseball": 1,
   "NBC Sports on MSN": 1,
   "Athlon Sports": 1,
-  "UPI on MSN": 1,
-  "The New York Times": 1
+  "Philadelphia Phillies On SI on MSN": 1
  }
 }

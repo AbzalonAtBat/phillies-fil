@@ -7,6 +7,8 @@ on:
   push:
     branches: [main]
 
+# Le deploiement passe par l'artefact Pages, pas par un commit : plus aucune
+# ecriture dans le depot, donc plus de collision avec les executions planifiees.
 permissions:
   contents: read
   pages: write

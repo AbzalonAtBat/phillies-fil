@@ -251,7 +251,7 @@ def find_date(text):
 WP_API = "/wp-json/wp/v2/posts?per_page=20&_fields=title,link,date_gmt,excerpt"
 
 
-def fetch_wp_api(site, timeout=60):
+def fetch_wp_api(site, timeout=60, tries=4):
     """Articles via l'API REST WordPress, en UNE requete.
 
     Bien plus economique que d'ouvrir chaque page d'article (une requete par
@@ -260,10 +260,26 @@ def fetch_wp_api(site, timeout=60):
     traverse son rendu sans se faire intercepter par le controle anti-robot
     du site (le mode JSON, lui, tombe sur une page "Robot Challenge Screen").
     """
-    req = urllib.request.Request(JINA + site.rstrip("/") + WP_API, headers={
-        "User-Agent": UA, "x-respond-with": "text"})
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+    api = JINA + site.rstrip("/") + WP_API
+    last = None
+    for i in range(tries):
+        try:
+            req = urllib.request.Request(api, headers={
+                "User-Agent": UA, "x-respond-with": "text"})
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                blob = r.read()
+            txt = blob.decode("utf-8", "replace")
+            # le controle anti-robot du site renvoie une page, pas du JSON :
+            # c'est intermittent, donc on reessaie au lieu d'abandonner.
+            if "Robot Challenge" in txt or '[{"' not in txt:
+                last = RuntimeError("reponse non-JSON (controle anti-robot)")
+                time.sleep(2 + 2 * i)
+                continue
+            return blob
+        except Exception as e:
+            last = e
+            time.sleep(2 + 2 * i)
+    raise last if last else RuntimeError("wp-api indisponible")
 
 
 def parse_wp_api(blob):

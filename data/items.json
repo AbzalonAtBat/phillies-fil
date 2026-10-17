@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-17T06:19:58.982935+00:00",
- "count": 77,
+ "generated": "2026-10-17T06:22:37.818415+00:00",
+ "count": 83,
  "sources": [
   {
    "source": "Phillies Nation",
    "site": "https://philliesnation.com/",
    "n": 0,
    "ok": false,
-   "note": "RemoteDisconnected: Remote end closed connection without response"
+   "note": "parse: not well-formed (invalid token): line 1, column 119"
   },
   {
    "source": "The Good Phight",
@@ -82,16 +82,16 @@
   {
    "source": "Presse — Phillies",
    "site": "https://www.bing.com/news",
-   "n": 0,
-   "ok": false,
-   "note": "parse: not well-formed (invalid token): line 1, column 41"
+   "n": 10,
+   "ok": true,
+   "note": "Bing News RSS"
   },
   {
    "source": "Presse — mercato",
    "site": "https://www.bing.com/news",
-   "n": 4,
-   "ok": true,
-   "note": "Bing News RSS"
+   "n": 0,
+   "ok": false,
+   "note": "parse: not well-formed (invalid token): line 1, column 41"
   },
   {
    "source": "Presse — effectif",
@@ -245,6 +245,15 @@
    "publisher": "The Good Phight",
    "chip": "The Good Phight",
    "site": "https://www.thegoodphight.com/"
+  },
+  {
+   "title": "Phillies Bullpen for Next Season Already Rounding Into Shape",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31430b1ee43ff9d888d06d8a3661e&url=https%3a%2f%2fwww.si.com%2fmlb%2fphillies%2fonsi%2fphillies-bullpen-for-next-season-already-rounding-into-shape&c=17106630913319801681&mkt=en-us&brdr=1",
+   "when": "2026-10-16T17:00:00+00:00",
+   "summary": "",
+   "publisher": "Sports Illustrated",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
   },
   {
    "title": "Wawa is Now the Official Hoagie and Breakfast Sandwich of the Philadelphia 76ers",
@@ -418,6 +427,15 @@
    "site": "https://www.thegoodphight.com/"
   },
   {
+   "title": "2 Phillies Legends Reportedly Turned Down Manager’s Job",
+   "url": "https://www.si.com/mlb/phillies/onsi/2-phillies-legends-reportedly-turned-down-manager-s-job",
+   "when": "2026-10-16T11:00:00+00:00",
+   "summary": "",
+   "publisher": "Sports Illustrated",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies Postseason Discussion Thread - Friday, October 16",
    "url": "https://www.reddit.com/r/phillies/comments/1x7b6t4/phillies_postseason_discussion_thread_friday/",
    "when": "2026-10-16T09:00:06+00:00",
@@ -428,10 +446,19 @@
   },
   {
    "title": "Dave Dombrowski appears ready to have Aidan Miller on Phillies by opening day",
-   "url": "https://www.msn.com/en-us/news/other/dave-dombrowski-appears-ready-to-have-aidan-miller-on-phillies-by-opening-day/ar-AA2enXLI",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31431e17d47e4818eadde511fe318&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fdave-dombrowski-appears-ready-to-have-aidan-miller-on-phillies-by-opening-day%2far-AA2enXLI&c=4527051419543012649&mkt=en-us&brdr=1",
    "when": "2026-10-16T08:00:28+00:00",
    "summary": "",
    "publisher": "Sports Illustrated on MSN",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Behind the Friction Within the 2026 Philadelphia Phillies Coaching Staff",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31430b1ee43ff9d888d06d8a3661e&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fbehind-the-friction-within-the-2026-philadelphia-phillies-coaching-staff%2far-AA2enRRg&c=12263108780888974529&mkt=en-us&brdr=1",
+   "when": "2026-10-16T06:39:00+00:00",
+   "summary": "",
+   "publisher": "Athlon Sports on MSN",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -443,6 +470,24 @@
    "publisher": "Phuture Phillies",
    "chip": "Phuture Phillies",
    "site": "https://phuturephillies.com/"
+  },
+  {
+   "title": "Phillies put Trea Turner on notice. Get better at shortstop or find another position",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31430b1ee43ff9d888d06d8a3661e&url=https%3a%2f%2fapnews.com%2farticle%2fphiladelphia-phillies-trea-turner-fc595066339008faf0c871a9bc93207e&c=10661712350937909535&mkt=en-us&brdr=1",
+   "when": "2026-10-16T03:00:00+00:00",
+   "summary": "",
+   "publisher": "Associated Press News",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Ex-Phillies star Raul Ibanez at least thought about leaving Dodgers to replace Don Mattingly",
+   "url": "https://www.msn.com/en-us/news/other/ex-phillies-star-raul-ibanez-at-least-thought-about-leaving-dodgers-to-replace-don-mattingly/ar-AA2elHvv",
+   "when": "2026-10-15T23:42:00+00:00",
+   "summary": "",
+   "publisher": "ClutchPoints on MSN",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
   },
   {
    "title": "PrizePicks Promo Code BROAD: Play $5, Win $150 in Lineups for Broncos vs. Seahawks",
@@ -488,6 +533,15 @@
    "publisher": "PhillyVoice",
    "chip": "PhillyVoice",
    "site": "https://www.phillyvoice.com/tags/phillies/"
+  },
+  {
+   "title": "Philadelphia Phillies Announce Bryce Harper, Kyle Schwarber News After Elimination",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31430b1ee43ff9d888d06d8a3661e&url=https%3a%2f%2fheavy.com%2fsports%2fmlb%2fphiladelphia-phillies%2fannounce-harper-schwarber-news-playoff-elimination%2f&c=9595953768054955043&mkt=en-us&brdr=1",
+   "when": "2026-10-15T17:05:00+00:00",
+   "summary": "",
+   "publisher": "Heavy",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
   },
   {
    "title": "ALCS/NLCS Gamethread: 10/15/2026",
@@ -562,6 +616,15 @@
    "site": "https://www.phillyvoice.com/tags/phillies/"
   },
   {
+   "title": "Philadelphia Phillies Announce Trea Turner News After Early Playoff Exit",
+   "url": "https://sports.yahoo.com/articles/philadelphia-phillies-announce-trea-turner-181034768.html",
+   "when": "2026-10-15T11:10:00+00:00",
+   "summary": "",
+   "publisher": "Yahoo Sports",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies News: Don Mattingly, Kevin Long, Dave Dombrowski",
    "url": "https://www.thegoodphight.com/philadelphia-phillies-news/88609/phillies-news-don-mattingly-dave-dombrowski-raul-ibanez",
    "when": "2026-10-15T07:00:00-04:00",
@@ -580,11 +643,11 @@
    "site": "https://thatballsouttahere.com/"
   },
   {
-   "title": "Phillies reunion with polarizing infielder 'can't be ruled out' per MLB insider",
-   "url": "https://www.sportingnews.com/us/mlb/philadelphia-phillies/news/phillies-reunion-polarizing-infielder-cant-be-ruled-out-mlb/71131591836f869be35f1f73",
-   "when": "2026-10-15T09:51:00+00:00",
+   "title": "Philadelphia Phillies Sign 34-Year-Old After Early Playoff Exit",
+   "url": "https://heavy.com/sports/mlb/philadelphia-phillies/sign-24-year-old-early-playoff-exit/",
+   "when": "2026-10-15T06:04:00+00:00",
    "summary": "",
-   "publisher": "Sporting News",
+   "publisher": "Heavy",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -670,6 +733,15 @@
    "site": "https://thatballsouttahere.com/"
   },
   {
+   "title": "Philadelphia Phillies are keeping Don Mattingly as manager on a 2-year deal",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31430b1ee43ff9d888d06d8a3661e&url=https%3a%2f%2fwww.msn.com%2fen-us%2fnews%2fother%2fphiladelphia-phillies-are-keeping-don-mattingly-as-manager-on-a-2-year-deal%2far-AA2ef0yC&c=3094441279227541050&mkt=en-us&brdr=1",
+   "when": "2026-10-14T08:27:00+00:00",
+   "summary": "",
+   "publisher": "NBC Sports on MSN",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies run familiar risk as rumors swirl regarding Don Mattingly re-hire",
    "url": "https://thatballsouttahere.com/phillies-risk-rumors-don-mattingly-rehire?utm_source=RSS",
    "when": "2026-10-14T00:01:22+00:00",
@@ -706,17 +778,8 @@
    "site": "https://www.phillyvoice.com/tags/phillies/"
   },
   {
-   "title": "Phillies predicted to trade Orion Kerkering to Red Sox for All-Star MVP",
-   "url": "https://sports.yahoo.com/articles/phillies-predicted-trade-orion-kerkering-161827406.html",
-   "when": "2026-10-13T09:18:00+00:00",
-   "summary": "",
-   "publisher": "Yahoo Sports",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "Five more questions the Phillies must answer this offseason",
-   "url": "https://www.nytimes.com/athletic/7684810/2026/10/13/phillies-offseason-questions/",
+   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad31431e17d47e4818eadde511fe318&url=https%3a%2f%2fwww.nytimes.com%2fathletic%2f7684810%2f2026%2f10%2f13%2fphillies-offseason-questions%2f&c=3610883425331046030&mkt=en-us&brdr=1",
    "when": "2026-10-13T03:01:00+00:00",
    "summary": "",
    "publisher": "The New York Times",
@@ -760,15 +823,6 @@
    "site": "https://www.phillyvoice.com/tags/phillies/"
   },
   {
-   "title": "Phillies get Luis Arraez free agent prediction that proves they lost Giants trade",
-   "url": "https://www.sportingnews.com/us/mlb/philadelphia-phillies/news/phillies-luis-arraez-prediction-prove-they-lost-giants-trade/89a3f733850e77f9d240b13f",
-   "when": "2026-10-08T11:44:00+00:00",
-   "summary": "",
-   "publisher": "Sporting News",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "Dave Dombrowski strikes out on Alex Cora again, and John Middleton is preparing to reward him for it",
    "url": "https://thelibertyline.com/2026/10/08/alex-cora-phillies-dombrowski/",
    "when": "2026-10-08T10:59:23+00:00",
@@ -797,11 +851,16 @@
   }
  ],
  "publishers": {
-  "Sporting News": 3,
+  "Sports Illustrated": 2,
+  "The New York Times": 2,
+  "Heavy": 2,
   "Forbes": 2,
+  "Athlon Sports on MSN": 1,
+  "ClutchPoints on MSN": 1,
   "Yahoo Sports": 1,
-  "Yardbarker on MSN": 1,
-  "Sports Illustrated on MSN": 1,
-  "The New York Times": 1
+  "NBC Sports on MSN": 1,
+  "Associated Press News": 1,
+  "Sporting News": 1,
+  "Sports Illustrated on MSN": 1
  }
 }

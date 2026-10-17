@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-17T00:54:35.559517+00:00",
- "count": 80,
+ "generated": "2026-10-17T05:11:59.275357+00:00",
+ "count": 87,
  "sources": [
   {
    "source": "Phillies Nation",
    "site": "https://philliesnation.com/",
    "n": 0,
    "ok": false,
-   "note": "parse: not well-formed (invalid token): line 1, column 119"
+   "note": "RemoteDisconnected: Remote end closed connection without response"
   },
   {
    "source": "The Good Phight",
@@ -68,7 +68,7 @@
   {
    "source": "MLB Trade Rumors",
    "site": "https://www.mlbtraderumors.com/",
-   "n": 2,
+   "n": 3,
    "ok": true,
    "note": ""
   },
@@ -82,26 +82,53 @@
   {
    "source": "Presse — Phillies",
    "site": "https://www.bing.com/news",
-   "n": 10,
+   "n": 9,
    "ok": true,
    "note": "Bing News RSS"
   },
   {
    "source": "Presse — mercato",
    "site": "https://www.bing.com/news",
-   "n": 3,
+   "n": 5,
    "ok": true,
    "note": "Bing News RSS"
   },
   {
    "source": "Presse — effectif",
    "site": "https://www.bing.com/news",
-   "n": 0,
-   "ok": false,
-   "note": "parse: not well-formed (invalid token): line 1, column 41"
+   "n": 6,
+   "ok": true,
+   "note": "Bing News RSS"
   }
  ],
  "items": [
+  {
+   "title": "[Phillies Tailgate] The Phillies, Mets and Pirates have activity scouted 24 year old SS Ju Won Kim from the NC Dinos of The KBO. Kim hit .280/.361/.427 with a .788 OPS and 18 HR this season while playing Gold Glove defense. Kim would not be eligible to be posted until the end of the 2028 season.",
+   "url": "https://www.reddit.com/r/phillies/comments/1x80rar/phillies_tailgate_the_phillies_mets_and_pirates/",
+   "when": "2026-10-17T04:13:26+00:00",
+   "summary": "submitted by /u/Magoatt_TheWhite [link] [comments]",
+   "publisher": "r/phillies",
+   "chip": "r/phillies",
+   "site": "https://www.reddit.com/r/phillies/"
+  },
+  {
+   "title": "The Phillies’ Many Infield Questions",
+   "url": "https://www.mlbtraderumors.com/2026/10/the-phillies-many-infield-questions.html",
+   "when": "2026-10-17T03:07:22+00:00",
+   "summary": "The Phillies reshuffled their infield at the trade deadline, moving three players to new positions to accommodate Luis Arraez. They kicked Bryson Stott over to third base, Alec Bohm across the diamond to first, and Bryce Harper…",
+   "publisher": "MLB Trade Rumors",
+   "chip": "MLB Trade Rumors",
+   "site": "https://www.mlbtraderumors.com/"
+  },
+  {
+   "title": "At ALCS Game 4 and got to see J-Roll.",
+   "url": "https://www.reddit.com/r/phillies/comments/1x7x2f4/at_alcs_game_4_and_got_to_see_jroll/",
+   "when": "2026-10-17T00:55:25+00:00",
+   "summary": "Yes, I did yell that I loved him and my introverted wife asked the TNT guys how close I could get. She's the best. Hence the 2nd photo. submitted by /u/the-great-gritsby [link] [comments]",
+   "publisher": "r/phillies",
+   "chip": "r/phillies",
+   "site": "https://www.reddit.com/r/phillies/"
+  },
   {
    "title": "Taylor Smith In Lead For A’s GM Job?",
    "url": "https://www.mlbtraderumors.com/2026/10/taylor-smith-in-lead-for-as-gm-job.html",
@@ -274,15 +301,6 @@
    "site": "https://www.crossingbroad.com/"
   },
   {
-   "title": "Phillies Had Interest in Hiring 2 Former Players Amid Don Mattingly Decision",
-   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad2c750ea944bec998f39a30b31d13f&url=https%3a%2f%2fsports.yahoo.com%2farticles%2fphillies-had-interest-hiring-2-221345635.html&c=1331296119827219293&mkt=en-us&brdr=1",
-   "when": "2026-10-16T15:14:00+00:00",
-   "summary": "",
-   "publisher": "Yahoo Sports",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "[Jeff Kerr] One of the #Phillies prospects Dave Dombrowski mentioned that could have that Bryan Rincon or Alex McFarlane leap in 2027? Mavis Graves. Moved from SP to RP in Reading. 0.96 ERA in 14 games and was massive towards Eastern League title. 6-6 LHP has excellent spin rate.",
    "url": "https://www.reddit.com/r/phillies/comments/1x7ios7/jeff_kerr_one_of_the_phillies_prospects_dave/",
    "when": "2026-10-16T15:06:28+00:00",
@@ -364,15 +382,6 @@
    "site": "https://www.phillyvoice.com/tags/phillies/"
   },
   {
-   "title": "Internal Options Will be Key for Phillies To Improve Next Season",
-   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad2c750ea944bec998f39a30b31d13f&url=https%3a%2f%2fsports.yahoo.com%2farticles%2finternal-options-key-phillies-improve-200212087.html&c=16581892326424922289&mkt=en-us&brdr=1",
-   "when": "2026-10-16T13:02:00+00:00",
-   "summary": "",
-   "publisher": "Yahoo Sports",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
    "title": "What is your best-case scenario for the Phillies offseason?",
    "url": "https://www.thegoodphight.com/phillies-discussion/88612/what-is-your-best-case-scenario-for-the-phillies-offseason",
    "when": "2026-10-16T09:00:00-04:00",
@@ -436,6 +445,24 @@
    "site": "https://www.reddit.com/r/phillies/"
   },
   {
+   "title": "Dave Dombrowski appears ready to have Aidan Miller on Phillies by opening day",
+   "url": "https://www.msn.com/en-us/news/other/dave-dombrowski-appears-ready-to-have-aidan-miller-on-phillies-by-opening-day/ar-AA2enXLI",
+   "when": "2026-10-16T08:00:28+00:00",
+   "summary": "",
+   "publisher": "Sports Illustrated on MSN",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Behind the Friction Within the 2026 Philadelphia Phillies Coaching Staff",
+   "url": "https://www.msn.com/en-us/news/other/behind-the-friction-within-the-2026-philadelphia-phillies-coaching-staff/ar-AA2enRRg",
+   "when": "2026-10-16T06:39:00+00:00",
+   "summary": "",
+   "publisher": "Athlon Sports on MSN",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies Discussion (10/15/2026)",
    "url": "https://phuturephillies.com/2026/10/16/phillies-discussion-10-15-2026/",
    "when": "2026-10-16T06:00:12+00:00",
@@ -445,38 +472,11 @@
    "site": "https://phuturephillies.com/"
   },
   {
-   "title": "Phillies put Trea Turner on notice. Get better at shortstop or find another position",
-   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad2c750ea944bec998f39a30b31d13f&url=https%3a%2f%2fwww.nbcsports.com%2fmlb%2fnews%2fphillies-put-trea-turner-on-notice-get-better-at-shortstop-or-find-another-position&c=10767676982142869000&mkt=en-us&brdr=1",
-   "when": "2026-10-16T04:44:00+00:00",
+   "title": "To Dave Dombrowski, the Phillies’ problems begin an arm’s length away",
+   "url": "https://www.msn.com/en-us/news/other/to-dave-dombrowski-the-phillies-problems-begin-an-arm-s-length-away/ar-AA2emkRw",
+   "when": "2026-10-16T02:01:00+00:00",
    "summary": "",
-   "publisher": "NBC Sports",
-   "chip": "Presse",
-   "site": "https://www.bing.com/news"
-  },
-  {
-   "title": "The Brewers have my back",
-   "url": "https://www.reddit.com/r/phillies/comments/1x75ram/the_brewers_have_my_back/",
-   "when": "2026-10-16T03:32:42+00:00",
-   "summary": "Great org, great city, great fanbase, and never achieving much. They swept the dodgers and have to face either the rays or guardians??? I'm gonna be behind the Brewers and you should be too. *They have my backing? I have their…",
-   "publisher": "r/phillies",
-   "chip": "r/phillies",
-   "site": "https://www.reddit.com/r/phillies/"
-  },
-  {
-   "title": "Ryan Howard and Shane Victorino will manage the Indianapolis Clowns and Loco Beach Coconuts for 2 banana ball games at CBP August 27-28 2027",
-   "url": "https://www.reddit.com/r/phillies/comments/1x742ry/ryan_howard_and_shane_victorino_will_manage_the/",
-   "when": "2026-10-16T02:03:59+00:00",
-   "summary": "submitted by /u/Perryplat199 [link] [comments]",
-   "publisher": "r/phillies",
-   "chip": "r/phillies",
-   "site": "https://www.reddit.com/r/phillies/"
-  },
-  {
-   "title": "Ex-Phillies star Raul Ibanez at least thought about leaving Dodgers to replace Don Mattingly",
-   "url": "https://www.msn.com/en-us/news/other/ex-phillies-star-raul-ibanez-at-least-thought-about-leaving-dodgers-to-replace-don-mattingly/ar-AA2elHvv",
-   "when": "2026-10-15T23:42:00+00:00",
-   "summary": "",
-   "publisher": "ClutchPoints on MSN",
+   "publisher": "The Philadelphia Inquirer on MSN",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -607,6 +607,15 @@
    "site": "https://www.phillyvoice.com/tags/phillies/"
   },
   {
+   "title": "Philadelphia Phillies Announce Trea Turner News After Early Playoff Exit",
+   "url": "https://sports.yahoo.com/articles/philadelphia-phillies-announce-trea-turner-181034768.html",
+   "when": "2026-10-15T11:10:00+00:00",
+   "summary": "",
+   "publisher": "Yahoo Sports",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies News: Don Mattingly, Kevin Long, Dave Dombrowski",
    "url": "https://www.thegoodphight.com/philadelphia-phillies-news/88609/phillies-news-don-mattingly-dave-dombrowski-raul-ibanez",
    "when": "2026-10-15T07:00:00-04:00",
@@ -626,8 +635,17 @@
   },
   {
    "title": "Phillies reunion with polarizing infielder 'can't be ruled out' per MLB insider",
-   "url": "https://www.sportingnews.com/us/mlb/philadelphia-phillies/news/phillies-reunion-polarizing-infielder-cant-be-ruled-out-mlb/71131591836f869be35f1f73",
+   "url": "https://sports.yahoo.com/articles/phillies-reunion-polarizing-infielder-cant-165134502.html",
    "when": "2026-10-15T09:51:00+00:00",
+   "summary": "",
+   "publisher": "Yahoo Sports",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Phillies reportedly wanted to hire Dodgers executive to replace Don Mattingly as manager",
+   "url": "https://www.sportingnews.com/ca/mlb/philadelphia-phillies/news/phillies-reportedly-wanted-hire-dodgers-executive-replace-don-mattingly-manager/d65574bccde1cf46aee3522a",
+   "when": "2026-10-15T08:54:00+00:00",
    "summary": "",
    "publisher": "Sporting News",
    "chip": "Presse",
@@ -639,6 +657,15 @@
    "when": "2026-10-15T06:04:00+00:00",
    "summary": "",
    "publisher": "Heavy",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Phillies’ Veteran Backstop Cuts Ties With Team Immediately After Season Ends",
+   "url": "https://www.forbes.com/sites/peterchawaga/2026/10/15/phillies-veteran-backstop-cuts-ties-with-team-immediately-after-season-ends/",
+   "when": "2026-10-15T03:30:00+00:00",
+   "summary": "",
+   "publisher": "Forbes",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -733,6 +760,15 @@
    "site": "https://thatballsouttahere.com/"
   },
   {
+   "title": "Phillies’ Aidan Miller gets update on chances of making Big League debut next season after back injury",
+   "url": "https://www.sportingnews.com/us/mlb/philadelphia-phillies/news/phillies-aidan-miller-update-chances-big-league-debut-injury/0045de4b5df669e2692100cf",
+   "when": "2026-10-13T22:13:00+00:00",
+   "summary": "",
+   "publisher": "Sporting News",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies stay or go: 2B/3B Bryson Stott",
    "url": "https://www.phillyvoice.com/phillies-stay-or-go-2b-3b-ss-infielder-bryson-stott-mlb-trade-rumors-news-analysis/?utm_source=phillies&utm_medium=rss&utm_campaign=pv-site",
    "when": "2026-10-13T13:20:48+00:00",
@@ -752,10 +788,28 @@
   },
   {
    "title": "Phillies predicted to trade Orion Kerkering to Red Sox for All-Star MVP",
-   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad2c750986d487ea50c90c9302be392&url=https%3a%2f%2fsports.yahoo.com%2farticles%2fphillies-predicted-trade-orion-kerkering-161827406.html&c=2952740139226275984&mkt=en-us&brdr=1",
+   "url": "https://sports.yahoo.com/articles/phillies-predicted-trade-orion-kerkering-161827406.html",
    "when": "2026-10-13T09:18:00+00:00",
    "summary": "",
    "publisher": "Yahoo Sports",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Five more questions the Phillies must answer this offseason",
+   "url": "https://www.nytimes.com/athletic/7684810/2026/10/13/phillies-offseason-questions/",
+   "when": "2026-10-13T03:01:00+00:00",
+   "summary": "",
+   "publisher": "The New York Times",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
+   "title": "Phillies’ 7-Year Veteran Sends Contract Message With $25 Million Cut From New Team Looming",
+   "url": "https://www.forbes.com/sites/peterchawaga/2026/10/12/phillies-7-year-veteran-sends-contract-message-with-25-million-cut-from-new-team-looming/",
+   "when": "2026-10-12T03:30:00+00:00",
+   "summary": "",
+   "publisher": "Forbes",
    "chip": "Presse",
    "site": "https://www.bing.com/news"
   },
@@ -778,6 +832,15 @@
    "site": "https://www.phillyvoice.com/tags/phillies/"
   },
   {
+   "title": "Five pressing questions facing Phillies during critical offseason",
+   "url": "https://www.mlb.com/news/questions-facing-phillies-in-2026-offseason",
+   "when": "2026-10-09T12:45:00+00:00",
+   "summary": "",
+   "publisher": "Major League Baseball",
+   "chip": "Presse",
+   "site": "https://www.bing.com/news"
+  },
+  {
    "title": "Phillies stay or go: 2B Luis Arráez",
    "url": "https://www.phillyvoice.com/phillies-stay-or-go-2b-luis-arraez-second-base-free-agency-rumors-news-analysis/?utm_source=phillies&utm_medium=rss&utm_campaign=pv-site",
    "when": "2026-10-08T15:11:44+00:00",
@@ -788,7 +851,7 @@
   },
   {
    "title": "Phillies get Luis Arraez free agent prediction that proves they lost Giants trade",
-   "url": "https://www.bing.com/news/apiclick.aspx?ref=FexRss&aid=&tid=6ad2c750986d487ea50c90c9302be392&url=https%3a%2f%2fwww.sportingnews.com%2fus%2fmlb%2fphiladelphia-phillies%2fnews%2fphillies-luis-arraez-prediction-prove-they-lost-giants-trade%2f89a3f733850e77f9d240b13f&c=210638282877899847&mkt=en-us&brdr=1",
+   "url": "https://www.sportingnews.com/us/mlb/philadelphia-phillies/news/phillies-luis-arraez-prediction-prove-they-lost-giants-trade/89a3f733850e77f9d240b13f",
    "when": "2026-10-08T11:44:00+00:00",
    "summary": "",
    "publisher": "Sporting News",
@@ -825,12 +888,16 @@
  ],
  "publishers": {
   "Yahoo Sports": 3,
+  "Sporting News": 3,
   "Sports Illustrated": 2,
+  "The New York Times": 2,
   "Heavy": 2,
-  "Sporting News": 2,
-  "NBC Sports": 1,
-  "ClutchPoints on MSN": 1,
+  "Forbes": 2,
+  "Athlon Sports on MSN": 1,
   "NBC Sports on MSN": 1,
-  "The New York Times": 1
+  "MLB Trade Rumors": 1,
+  "Major League Baseball": 1,
+  "Sports Illustrated on MSN": 1,
+  "The Philadelphia Inquirer on MSN": 1
  }
 }

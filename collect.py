@@ -221,9 +221,31 @@ def resolve_bing(url, timeout=20):
 
 
 JINA = "https://r.jina.ai/"
-DATE_RE = re.compile(
-    r"\b(January|February|March|April|May|June|July|August|September|October|"
-    r"November|December)\s+(\d{1,2}),\s*(20\d\d)\b")
+_MON = {m: i + 1 for i, m in enumerate(
+    ["jan", "feb", "mar", "apr", "may", "jun",
+     "jul", "aug", "sep", "oct", "nov", "dec"])}
+# deux formats rencontres dans le rendu HTML du flux
+_DATE_PATS = (
+    re.compile(r"(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(20\d\d)"),      # 16 Oct 2026
+    re.compile(r"([A-Za-z]{3})[a-z]*\s+(\d{1,2}),\s*(20\d\d)"),      # Oct 16, 2026
+)
+
+
+def find_date(text):
+    """Extrait une date d'un fragment de texte, quel que soit le format."""
+    for i, rx in enumerate(_DATE_PATS):
+        m = rx.search(text)
+        if not m:
+            continue
+        try:
+            if i == 0:
+                d, mo, y = int(m.group(1)), _MON[m.group(2).lower()[:3]], int(m.group(3))
+            else:
+                d, mo, y = int(m.group(2)), _MON[m.group(1).lower()[:3]], int(m.group(3))
+            return datetime(y, mo, d, tzinfo=timezone.utc)
+        except Exception:
+            continue
+    return None
 
 
 RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=%s&count=20"
@@ -255,7 +277,16 @@ def parse_rss2json(blob):
 
 
 def _via_rss2json(url, host):
-    return parse_rss2json(fetch_rss2json(url))
+    for attempt in range(2):
+        try:
+            got = parse_rss2json(fetch_rss2json(url))
+            if got:
+                return got
+        except Exception:
+            pass
+        if attempt == 0:
+            time.sleep(2)
+    return []
 
 
 def _via_jina(url, host):
@@ -287,15 +318,8 @@ def parse_proxied_items(blob, host):
         if not title or not url.startswith("http") or host not in url or url in seen:
             continue
         seen.add(url)
-        tail = h[m.end():m.end() + 400]
-        when = None
-        dm = DATE_RE.search(tail)
-        if dm:
-            try:
-                when = datetime.strptime("%s %s, %s" % dm.groups(),
-                                         "%B %d, %Y").replace(tzinfo=timezone.utc)
-            except Exception:
-                when = None
+        when = (find_date(h[m.end():m.end() + 700])
+                or find_date(h[max(0, m.start() - 700):m.start()]))
         out.append({"title": title, "url": url, "when": when,
                     "summary": "", "publisher": "", "author": ""})
     return out

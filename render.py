@@ -488,6 +488,9 @@ footer .note b{color:var(--chalk)}
                 .replace("__NLIVE__", str(len(live)))
                 .replace("__NDEAD__", str(len(dead)))
                 .replace("__N__", str(len(items))))
+    # un checkout propre ne contient pas le dossier de sortie (il est ignore
+    # par git) : on le cree, sinon l'ecriture echoue en integration continue.
+    os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(html)
     print("ecrit:", OUT, os.path.getsize(OUT) // 1024, "Ko |", len(items), "cartes")

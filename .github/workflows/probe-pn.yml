@@ -1,9 +1,0 @@
-name: probe phillies nation
-on: workflow_dispatch
-jobs:
-  probe:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: sondage
-        run: python3 probe_pn.py

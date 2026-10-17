@@ -1,3 +1,5 @@
 data/raw/
 __pycache__/
 *.pyc
+data/items.json
+_site/

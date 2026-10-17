@@ -9,6 +9,7 @@ sites renvoient 403 ou du HTML aux User-Agents de robots (constate sur Reddit
 et Phillies Nation).
 """
 import os, re, json, html as ht, time, urllib.request, urllib.error
+import urllib.parse
 from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 import xml.etree.ElementTree as ET
@@ -219,24 +220,125 @@ def resolve_bing(url, timeout=20):
         return None
 
 
+JINA = "https://r.jina.ai/"
+DATE_RE = re.compile(
+    r"\b(January|February|March|April|May|June|July|August|September|October|"
+    r"November|December)\s+(\d{1,2}),\s*(20\d\d)\b")
+
+
+RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=%s&count=20"
+
+
+def fetch_rss2json(url, timeout=45):
+    """Convertit un flux RSS en JSON, cote serveur : contourne le blocage d'IP
+    tout en PRESERVANT pubDate et description (contrairement au rendu HTML)."""
+    req = urllib.request.Request(
+        RSS2JSON % urllib.parse.quote(url, safe=""), headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read()
+
+
+def parse_rss2json(blob):
+    d = json.loads(blob.decode("utf-8", "replace"))
+    if d.get("status") != "ok":
+        return []
+    out = []
+    for it in d.get("items") or []:
+        title, link = (it.get("title") or "").strip(), (it.get("link") or "").strip()
+        if not title or not link.startswith("http"):
+            continue
+        out.append({"title": clean(title), "url": link,
+                    "when": parse_when(it.get("pubDate") or ""),
+                    "summary": clean(it.get("description") or ""),
+                    "publisher": "", "author": ""})
+    return out
+
+
+def _via_rss2json(url, host):
+    return parse_rss2json(fetch_rss2json(url))
+
+
+def _via_jina(url, host):
+    return parse_proxied_items(fetch_via_proxy(url), host)
+
+
+def fetch_via_proxy(url, timeout=55):
+    """Recours quand l'acces direct est bloque.
+
+    Le filtrage est applicatif et vise l'IP (pas l'User-Agent ni l'empreinte
+    TLS : la poignee de main aboutit puis la reponse ne vient jamais). Il frappe
+    aussi bien le sandbox que les runners GitHub Actions : verifie sur les deux.
+
+    r.jina.ai est gratuit et sans cle. Il ne renvoie pas le XML brut mais le
+    flux rendu en HTML, ou chaque article figure en <h3><a href="...">Titre</a>.
+    """
+    req = urllib.request.Request(JINA + url, headers={
+        "User-Agent": UA, "Accept": "text/html", "x-return-format": "html"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read()
+
+
+def parse_proxied_items(blob, host):
+    """Extrait (titre, url, date) d'un flux rendu en HTML par le proxy."""
+    h = blob.decode("utf-8", "replace")
+    out, seen = [], set()
+    for m in re.finditer(r'<h3>\s*<a[^>]*href="([^"]+)"[^>]*>(.*?)</a>', h, re.S):
+        url, title = m.group(1).strip(), clean(m.group(2))
+        if not title or not url.startswith("http") or host not in url or url in seen:
+            continue
+        seen.add(url)
+        tail = h[m.end():m.end() + 400]
+        when = None
+        dm = DATE_RE.search(tail)
+        if dm:
+            try:
+                when = datetime.strptime("%s %s, %s" % dm.groups(),
+                                         "%B %d, %Y").replace(tzinfo=timezone.utc)
+            except Exception:
+                when = None
+        out.append({"title": title, "url": url, "when": when,
+                    "summary": "", "publisher": "", "author": ""})
+    return out
+
+
 def collect():
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=DAYS)
     os.makedirs(RAW, exist_ok=True)
-    report, staged = [], []
+    report, staged, proxied = [], [], set()
 
     # 1. redactions -----------------------------------------------------------
     for name, url, site, mode in RSS_FEEDS:
         slug = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
         path = os.path.join(RAW, slug + ".xml")
-        err = None
+        err, blob = None, None
         try:
             blob = fetch(url)
             open(path, "wb").write(blob)
         except Exception as e:
             err = "%s: %s" % (type(e).__name__, getattr(e, "code", e))
-        items, perr = parse_xml(path) if os.path.exists(path) else ([], "flux absent")
-        err = err or perr
+        items, perr = ([], "")
+        if blob is not None:
+            items, perr = parse_xml(path)
+        if not items and perr:
+            err = ((err or "") + " " + perr).strip()
+        # repli : l'acces direct est filtre par IP sur certains sites (verifie
+        # dans le sandbox ET sur un runner GitHub Actions). rss2json d'abord
+        # (il preserve pubDate et description), r.jina.ai ensuite.
+        if not items:
+            host = urllib.parse.urlparse(site).netloc
+            last = ""
+            for label, fn in (("rss2json", _via_rss2json), ("jina", _via_jina)):
+                try:
+                    got = fn(url, host)
+                    if got:
+                        items, err = got, None
+                        proxied.add("%s via %s" % (name, label))
+                        break
+                except Exception as e2:
+                    last = "%s: %s" % (label, type(e2).__name__)
+            if not items and last:
+                err = ((err or "") + " | " + last).strip()
         n = 0
         for it in items:
             if not it["title"] or not it["url"]:
@@ -374,6 +476,8 @@ def collect():
         print("  %-26s %s n=%-3s %s" % (r["source"], "OK " if r["ok"] else "KO ",
                                         r["n"], r["note"][:52]))
     print("  liens Bing resolus vers l'editeur: %d" % resolved)
+    if proxied:
+        print("  sources recuperees via proxy gratuit: %s" % ", ".join(sorted(proxied)))
     print("  editeurs via Bing News: %d" % len(seen_pub))
     for p, c in list(sorted(seen_pub.items(), key=lambda kv: -kv[1]))[:8]:
         print("     %-28s %d" % (p[:28], c))

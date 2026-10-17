@@ -248,7 +248,12 @@ def find_date(text):
     return None
 
 
-WP_API = "/wp-json/wp/v2/posts?per_page=20&_fields=title,link,date_gmt,excerpt"
+# deux ecritures equivalentes de l'API REST : /wp-json/ est souvent soumis au
+# controle anti-robot de Cloudflare, ?rest_route= y echappe frequemment.
+WP_APIS = (
+    "/wp-json/wp/v2/posts?per_page=20&_fields=title,link,date_gmt,excerpt",
+    "/?rest_route=/wp/v2/posts&per_page=20&_fields=title,link,date_gmt,excerpt",
+)
 
 
 def fetch_wp_api(site, timeout=60, tries=4):
@@ -260,25 +265,26 @@ def fetch_wp_api(site, timeout=60, tries=4):
     traverse son rendu sans se faire intercepter par le controle anti-robot
     du site (le mode JSON, lui, tombe sur une page "Robot Challenge Screen").
     """
-    api = JINA + site.rstrip("/") + WP_API
     last = None
-    for i in range(tries):
-        try:
-            req = urllib.request.Request(api, headers={
-                "User-Agent": UA, "x-respond-with": "text"})
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                blob = r.read()
-            txt = blob.decode("utf-8", "replace")
-            # le controle anti-robot du site renvoie une page, pas du JSON :
-            # c'est intermittent, donc on reessaie au lieu d'abandonner.
-            if "Robot Challenge" in txt or '[{"' not in txt:
-                last = RuntimeError("reponse non-JSON (controle anti-robot)")
+    for path in WP_APIS:
+        api = JINA + site.rstrip("/") + path
+        for i in range(tries):
+            try:
+                req = urllib.request.Request(api, headers={
+                    "User-Agent": UA, "x-respond-with": "text"})
+                with urllib.request.urlopen(req, timeout=timeout) as r:
+                    blob = r.read()
+                txt = blob.decode("utf-8", "replace")
+                # le controle anti-robot renvoie une page, pas du JSON : c'est
+                # intermittent, donc on reessaie au lieu d'abandonner.
+                if "Robot Challenge" in txt or '[{"' not in txt:
+                    last = RuntimeError("reponse non-JSON (controle anti-robot)")
+                    time.sleep(2 + 2 * i)
+                    continue
+                return blob
+            except Exception as e:
+                last = e
                 time.sleep(2 + 2 * i)
-                continue
-            return blob
-        except Exception as e:
-            last = e
-            time.sleep(2 + 2 * i)
     raise last if last else RuntimeError("wp-api indisponible")
 
 
@@ -346,15 +352,14 @@ def parse_rss2json(blob):
 
 
 def _via_rss2json(url, site):
-    for attempt in range(2):
+    for attempt in range(3):
         try:
             got = parse_rss2json(fetch_rss2json(url))
             if got:
                 return got
         except Exception:
             pass
-        if attempt == 0:
-            time.sleep(2)
+        time.sleep(2)
     return []
 
 

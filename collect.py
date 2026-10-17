@@ -248,6 +248,59 @@ def find_date(text):
     return None
 
 
+WP_API = "/wp-json/wp/v2/posts?per_page=20&_fields=title,link,date_gmt,excerpt"
+
+
+def fetch_wp_api(site, timeout=60):
+    """Articles via l'API REST WordPress, en UNE requete.
+
+    Bien plus economique que d'ouvrir chaque page d'article (une requete par
+    article) et plus fiable : le JSON arrive intact avec date_gmt, donc
+    l'horodatage complet. Passe par r.jina.ai en mode texte, seul mode qui
+    traverse son rendu sans se faire intercepter par le controle anti-robot
+    du site (le mode JSON, lui, tombe sur une page "Robot Challenge Screen").
+    """
+    req = urllib.request.Request(JINA + site.rstrip("/") + WP_API, headers={
+        "User-Agent": UA, "x-respond-with": "text"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read()
+
+
+def parse_wp_api(blob):
+    """Convertit la reponse de l'API REST WordPress en articles."""
+    txt = blob.decode("utf-8", "replace").strip()
+    start = txt.find("[")
+    if start < 0:
+        return []
+    try:
+        data = json.loads(txt[start:])
+    except Exception:
+        return []
+    if not isinstance(data, list):
+        return []
+    out = []
+    for post in data:
+        if not isinstance(post, dict):
+            continue
+        title = ((post.get("title") or {}).get("rendered") or "").strip()
+        link = (post.get("link") or "").strip()
+        if not title or not link.startswith("http"):
+            continue
+        raw = (post.get("date_gmt") or post.get("date") or "").strip()
+        when = parse_when(raw + "Z" if raw and not raw.endswith("Z") else raw)
+        exc = clean((post.get("excerpt") or {}).get("rendered") or "")
+        for tail in ("[\u2026]", "\u2026", "[...]", "..."):
+            if exc.endswith(tail):
+                exc = exc[:-len(tail)].strip()
+        out.append({"title": clean(title), "url": link, "when": when,
+                    "summary": exc, "publisher": "", "author": ""})
+    return out
+
+
+def _via_wpapi(url, site):
+    return parse_wp_api(fetch_wp_api(site))
+
+
 RSS2JSON = "https://api.rss2json.com/v1/api.json?rss_url=%s&count=20"
 
 
@@ -276,7 +329,7 @@ def parse_rss2json(blob):
     return out
 
 
-def _via_rss2json(url, host):
+def _via_rss2json(url, site):
     for attempt in range(2):
         try:
             got = parse_rss2json(fetch_rss2json(url))
@@ -289,8 +342,9 @@ def _via_rss2json(url, host):
     return []
 
 
-def _via_jina(url, host):
-    return parse_proxied_items(fetch_via_proxy(url), host)
+def _via_jina(url, site):
+    return parse_proxied_items(fetch_via_proxy(url),
+                               urllib.parse.urlparse(site).netloc)
 
 
 def fetch_via_proxy(url, timeout=55):
@@ -347,14 +401,17 @@ def collect():
         if not items and perr:
             err = ((err or "") + " " + perr).strip()
         # repli : l'acces direct est filtre par IP sur certains sites (verifie
-        # dans le sandbox ET sur un runner GitHub Actions). rss2json d'abord
-        # (il preserve pubDate et description), r.jina.ai ensuite.
+        # dans le sandbox ET sur un runner GitHub Actions).
+        #   1. API REST WordPress : 1 requete, horodatage complet
+        #   2. rss2json           : horodatage complet (service souvent sature)
+        #   3. r.jina.ai          : titres + URL, date au jour pres
         if not items:
-            host = urllib.parse.urlparse(site).netloc
             last = ""
-            for label, fn in (("rss2json", _via_rss2json), ("jina", _via_jina)):
+            for label, fn in (("wp-api", _via_wpapi),
+                              ("rss2json", _via_rss2json),
+                              ("jina", _via_jina)):
                 try:
-                    got = fn(url, host)
+                    got = fn(url, site)
                     if got:
                         items, err = got, None
                         proxied.add("%s via %s" % (name, label))
